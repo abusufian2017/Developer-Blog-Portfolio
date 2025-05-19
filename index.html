@@ -1,0 +1,1474 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abu Sufian | Developer Blog &amp; Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            --sass-bg-primary: #0f172a;
+            --sass-bg-secondary: #1e293b;
+            --sass-bg-tertiary: #334155;
+            --sass-text-primary: #f8fafc;
+            --sass-text-secondary: #cbd5e1;
+            --sass-text-tertiary: #94a3b8;
+            --sass-accent-primary: #3b82f6;
+            --sass-accent-secondary: #60a5fa;
+            --sass-accent-tertiary: #93c5fd;
+            --sass-success: #10b981;
+            --sass-warning: #f59e0b;
+            --sass-danger: #ef4444;
+            --sass-info: #0ea5e9;
+            --sass-border: #334155;
+            --sass-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --sass-header-height: 64px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sass-bg-primary);
+            color: var(--sass-text-primary);
+            line-height: 1.6;
+        }
+        
+        .sass-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .sass-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--sass-header-height);
+            background-color: var(--sass-bg-primary);
+            border-bottom: 1px solid var(--sass-border);
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        
+        .sass-header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .sass-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--sass-text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sass-logo-accent {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .sass-nav-link {
+            text-decoration: none;
+            color: var(--sass-text-secondary);
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .sass-nav-link:hover {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-nav-link.sass-active {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-main {
+            margin-top: var(--sass-header-height);
+            padding: 2rem 0;
+        }
+        
+        .sass-hero {
+            padding: 4rem 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .sass-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sass-accent-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .sass-hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--sass-accent-primary), var(--sass-accent-tertiary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .sass-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--sass-text-secondary);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+        
+        .sass-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .sass-tag {
+            background-color: var(--sass-bg-tertiary);
+            color: var(--sass-text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .sass-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sass-social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: var(--sass-bg-secondary);
+            color: var(--sass-text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .sass-social-link:hover {
+            background-color: var(--sass-accent-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .sass-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--sass-border);
+        }
+        
+        .sass-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .sass-section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--sass-text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .sass-section-title-icon {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-view-all {
+            color: var(--sass-accent-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .sass-view-all:hover {
+            text-decoration: underline;
+        }
+        
+        .sass-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .sass-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .sass-grid.sass-grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .sass-card {
+            background-color: var(--sass-bg-secondary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: var(--sass-card-shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sass-card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .sass-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sass-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .sass-card-date {
+            font-size: 0.75rem;
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-card-category {
+            font-size: 0.75rem;
+            color: var(--sass-accent-primary);
+            font-weight: 500;
+        }
+        
+        .sass-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--sass-text-primary);
+            line-height: 1.4;
+        }
+        
+        .sass-card-description {
+            color: var(--sass-text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            flex-grow: 1;
+        }
+        
+        .sass-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .sass-card-stats {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .sass-card-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-card-link {
+            color: var(--sass-accent-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .sass-card-link:hover {
+            text-decoration: underline;
+        }
+        
+        .sass-project-card {
+            background-color: var(--sass-bg-secondary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: var(--sass-card-shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sass-project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sass-project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sass-project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .sass-project-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            background-color: var(--sass-bg-tertiary);
+            color: var(--sass-accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .sass-project-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .sass-project-link {
+            color: var(--sass-text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .sass-project-link:hover {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: var(--sass-text-primary);
+        }
+        
+        .sass-project-description {
+            color: var(--sass-text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            flex-grow: 1;
+        }
+        
+        .sass-project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .sass-project-tag {
+            background-color: var(--sass-bg-tertiary);
+            color: var(--sass-text-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .sass-newsletter {
+            background-color: var(--sass-bg-secondary);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: var(--sass-card-shadow);
+        }
+        
+        .sass-newsletter-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--sass-text-primary);
+        }
+        
+        .sass-newsletter-description {
+            color: var(--sass-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .sass-newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        @media (max-width: 640px) {
+            .sass-newsletter-form {
+                flex-direction: column;
+            }
+        }
+        
+        .sass-newsletter-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--sass-border);
+            border-radius: 0.5rem;
+            background-color: var(--sass-bg-tertiary);
+            color: var(--sass-text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+        }
+        
+        .sass-newsletter-input:focus {
+            outline: none;
+            border-color: var(--sass-accent-primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        
+        .sass-newsletter-button {
+            background-color: var(--sass-accent-primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .sass-newsletter-button:hover {
+            background-color: var(--sass-accent-secondary);
+        }
+        
+        .sass-rss {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sass-text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        
+        .sass-rss:hover {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-rss-icon {
+            color: var(--sass-warning);
+        }
+        
+        .sass-footer {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .sass-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .sass-footer-link {
+            color: var(--sass-text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+        
+        .sass-footer-link:hover {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-copyright {
+            font-size: 0.875rem;
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .sass-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sass-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+        
+        .sass-contact-item:hover {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-contact-icon {
+            color: var(--sass-accent-primary);
+        }
+        
+        .sass-mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--sass-text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sass-mobile-menu-button {
+                display: block;
+            }
+            
+            .sass-nav {
+                display: none;
+                position: absolute;
+                top: var(--sass-header-height);
+                left: 0;
+                right: 0;
+                background-color: var(--sass-bg-primary);
+                border-bottom: 1px solid var(--sass-border);
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .sass-nav.sass-active {
+                display: flex;
+            }
+        }
+        
+        .sass-code-block {
+            background-color: var(--sass-bg-tertiary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--sass-text-secondary);
+            overflow-x: auto;
+        }
+        
+        .sass-code-comment {
+            color: #64748b;
+        }
+        
+        .sass-code-keyword {
+            color: #c084fc;
+        }
+        
+        .sass-code-string {
+            color: #34d399;
+        }
+        
+        .sass-code-function {
+            color: #60a5fa;
+        }
+        
+        .sass-code-variable {
+            color: #f87171;
+        }
+        
+        .sass-featured-post {
+            background-color: var(--sass-bg-secondary);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: var(--sass-card-shadow);
+        }
+        
+        .sass-featured-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .sass-featured-content {
+            padding: 2rem;
+        }
+        
+        .sass-featured-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .sass-featured-date {
+            font-size: 0.875rem;
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-featured-category {
+            background-color: var(--sass-accent-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .sass-featured-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--sass-text-primary);
+            line-height: 1.3;
+        }
+        
+        .sass-featured-description {
+            color: var(--sass-text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .sass-featured-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .sass-featured-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .sass-featured-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-featured-link {
+            background-color: var(--sass-accent-primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        .sass-featured-link:hover {
+            background-color: var(--sass-accent-secondary);
+        }
+        
+        .sass-search {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .sass-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--sass-border);
+            border-radius: 0.5rem;
+            background-color: var(--sass-bg-secondary);
+            color: var(--sass-text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+        }
+        
+        .sass-search-input:focus {
+            outline: none;
+            border-color: var(--sass-accent-primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        
+        .sass-search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--sass-text-tertiary);
+        }
+        
+        .sass-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .sass-pagination-item {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            background-color: var(--sass-bg-secondary);
+            color: var(--sass-text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .sass-pagination-item:hover {
+            background-color: var(--sass-bg-tertiary);
+        }
+        
+        .sass-pagination-item.sass-active {
+            background-color: var(--sass-accent-primary);
+            color: white;
+        }
+        
+        .sass-pagination-item.sass-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .sass-pagination-item.sass-disabled:hover {
+            background-color: var(--sass-bg-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="sass-header">
+        <div class="sass-container sass-header-container">
+            <a href="#" class="sass-logo">
+                <i class="fas fa-code sass-logo-accent"></i>
+                Abu<span class="sass-logo-accent">Dev</span>
+            </a>
+            <button id="sassMobileMenuButton" class="sass-mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="sassNav" class="sass-nav">
+                <a href="#" class="sass-nav-link sass-active">Home</a>
+                <a href="#sassBlog" class="sass-nav-link">Blog</a>
+                <a href="#sassProjects" class="sass-nav-link">Projects</a>
+                <a href="#sassAbout" class="sass-nav-link">About</a>
+                <a href="#sassContact" class="sass-nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="sass-main">
+        <div class="sass-container">
+            <section class="sass-hero">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%233b82f6'/%3E%3Cpath d='M60,40 C67.1797017,40 73,45.8202983 73,53 C73,60.1797017 67.1797017,66 60,66 C52.8202983,66 47,60.1797017 47,53 C47,45.8202983 52.8202983,40 60,40 Z M60,68 C74.9116882,68 87,74.372583 87,82 L87,82 L87,86 L33,86 L33,82 C33,74.372583 45.0883118,68 60,68 Z' fill='white'/%3E%3C/svg%3E" alt="Abu Sufian" class="sass-avatar">
+                <h1 class="sass-hero-title">Abu Sufian</h1>
+                <p class="sass-hero-subtitle">Full-stack developer, technical writer, and open source contributor sharing insights about web development, JavaScript, and developer tools.</p>
+                
+                <div class="sass-tags">
+                    <span class="sass-tag">JavaScript</span>
+                    <span class="sass-tag">React</span>
+                    <span class="sass-tag">Node.js</span>
+                    <span class="sass-tag">TypeScript</span>
+                    <span class="sass-tag">Web Development</span>
+                </div>
+                
+                <div class="sass-social-links">
+                    <a href="https://twitter.com/abusufianshoron" target="_blank" class="sass-social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/abusufianshoron" target="_blank" class="sass-social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/abusufianshoron" target="_blank" class="sass-social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://dev.to/abusufianshoron" target="_blank" class="sass-social-link">
+                        <i class="fab fa-dev"></i>
+                    </a>
+                    <a href="https://hashnode.com/@abusufianshoron" target="_blank" class="sass-social-link">
+                        <i class="fas fa-h-square"></i>
+                    </a>
+                </div>
+                
+                <div class="sass-search">
+                    <i class="fas fa-search sass-search-icon"></i>
+                    <input type="text" class="sass-search-input" placeholder="Search articles...">
+                </div>
+            </section>
+            
+            <section class="sass-featured-post">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='300' viewBox='0 0 1200 300'%3E%3Crect width='1200' height='300' fill='%233b82f6'/%3E%3Cpath d='M600,75 L675,150 L600,225 L525,150 Z' fill='white'/%3E%3Cpath d='M450,150 L525,75 L600,150 L525,225 Z' fill='rgba(255,255,255,0.7)'/%3E%3Cpath d='M750,150 L675,75 L600,150 L675,225 Z' fill='rgba(255,255,255,0.7)'/%3E%3C/svg%3E" alt="Featured Post" class="sass-featured-image">
+                <div class="sass-featured-content">
+                    <div class="sass-featured-meta">
+                        <span class="sass-featured-date">May 15, 2025</span>
+                        <span class="sass-featured-category">React</span>
+                    </div>
+                    <h2 class="sass-featured-title">Building Performant React Applications: Advanced Techniques</h2>
+                    <p class="sass-featured-description">Learn how to optimize your React applications for better performance using advanced techniques like code splitting, memoization, virtualization, and more. This comprehensive guide covers everything you need to know to make your React apps blazing fast.</p>
+                    <div class="sass-featured-footer">
+                        <div class="sass-featured-stats">
+                            <div class="sass-featured-stat">
+                                <i class="fas fa-eye"></i>
+                                <span>2.4K views</span>
+                            </div>
+                            <div class="sass-featured-stat">
+                                <i class="fas fa-heart"></i>
+                                <span>187 likes</span>
+                            </div>
+                            <div class="sass-featured-stat">
+                                <i class="fas fa-comment"></i>
+                                <span>32 comments</span>
+                            </div>
+                        </div>
+                        <a href="#" class="sass-featured-link">Read Article</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sassBlog" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-pen-fancy sass-section-title-icon"></i>
+                        Latest Articles
+                    </h2>
+                    <a href="#" class="sass-view-all">
+                        View all articles
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="sass-grid sass-grid-3">
+                    <!-- Article 1 -->
+                    <div class="sass-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%233b82f6'/%3E%3Cpath d='M200,50 L250,90 L200,130 L150,90 Z' fill='white'/%3E%3C/svg%3E" alt="React Hooks" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">May 10, 2024</span>
+                                <span class="sass-card-category">React</span>
+                            </div>
+                            <h3 class="sass-card-title">Understanding React Hooks: Beyond the Basics</h3>
+                            <p class="sass-card-description">Dive deeper into React Hooks with advanced patterns, custom hooks, and performance optimizations that will take your React skills to the next level.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>1.2K</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>98</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="sass-card" style="">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%2310b981'/%3E%3Cpath d='M150,90 L250,90 M200,40 L200,140' stroke='white' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E" alt="Node.js" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">May 5, 2024</span>
+                                <span class="sass-card-category">Node.js</span>
+                            </div>
+                            <h3 class="sass-card-title">Building Scalable APIs with Node.js and Express</h3>
+                            <p class="sass-card-description">Learn how to design and implement scalable, maintainable APIs using Node.js and Express with best practices for authentication, validation, and error handling.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>956</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>87</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="sass-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%23f59e0b'/%3E%3Cpath d='M200,50 C230,50 250,70 250,90 C250,110 230,130 200,130 C170,130 150,110 150,90 C150,70 170,50 200,50 Z' stroke='white' stroke-width='8' fill='none'/%3E%3C/svg%3E" alt="TypeScript" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">April 28, 2024</span>
+                                <span class="sass-card-category">TypeScript</span>
+                            </div>
+                            <h3 class="sass-card-title">TypeScript Advanced Types and Patterns</h3>
+                            <p class="sass-card-description">Master TypeScript's type system with advanced techniques like conditional types, mapped types, and utility types to write more robust and maintainable code.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>845</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>76</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 4 -->
+                    <div class="sass-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%238b5cf6'/%3E%3Cpath d='M150,60 L250,60 L250,120 L150,120 Z' stroke='white' stroke-width='8' fill='none'/%3E%3Cpath d='M170,90 L230,90' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" alt="CSS" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">April 20, 2024</span>
+                                <span class="sass-card-category">CSS</span>
+                            </div>
+                            <h3 class="sass-card-title">Modern CSS Techniques for Responsive Layouts</h3>
+                            <p class="sass-card-description">Explore modern CSS techniques like Grid, Flexbox, Container Queries, and CSS Variables to create flexible, maintainable, and responsive layouts.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>723</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>65</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 5 -->
+                    <div class="sass-card" style="">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%23ef4444'/%3E%3Cpath d='M200,50 L200,130 M150,90 L250,90' stroke='white' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E" alt="Testing" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">April 15, 2024</span>
+                                <span class="sass-card-category">Testing</span>
+                            </div>
+                            <h3 class="sass-card-title">Testing React Applications: A Comprehensive Guide</h3>
+                            <p class="sass-card-description">Learn how to effectively test React applications using Jest, React Testing Library, and Cypress with practical examples and best practices.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>689</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>58</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 6 -->
+                    <div class="sass-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%230ea5e9'/%3E%3Ccircle cx='200' cy='90' r='40' stroke='white' stroke-width='8' fill='none'/%3E%3Cpath d='M200,50 L200,90 L230,90' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" alt="Performance" class="sass-card-image">
+                        <div class="sass-card-content">
+                            <div class="sass-card-meta">
+                                <span class="sass-card-date">April 8, 2024</span>
+                                <span class="sass-card-category">Performance</span>
+                            </div>
+                            <h3 class="sass-card-title">Web Performance Optimization Techniques</h3>
+                            <p class="sass-card-description">Discover practical techniques to optimize your web applications for better performance, including code splitting, lazy loading, caching strategies, and more.</p>
+                            <div class="sass-card-footer">
+                                <div class="sass-card-stats">
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-eye"></i>
+                                        <span>612</span>
+                                    </div>
+                                    <div class="sass-card-stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>52</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="sass-card-link">
+                                    Read more
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sass-pagination">
+                    <a href="#" class="sass-pagination-item sass-disabled">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="sass-pagination-item sass-active">1</a>
+                    <a href="#" class="sass-pagination-item">2</a>
+                    <a href="#" class="sass-pagination-item">3</a>
+                    <a href="#" class="sass-pagination-item">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </section>
+            
+            <section id="sassProjects" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-laptop-code sass-section-title-icon"></i>
+                        Latest Projects
+                    </h2>
+                    <a href="#" class="sass-view-all">
+                        View all projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="sass-grid">
+                    <!-- Project 1 -->
+                    <div class="sass-project-card">
+                        <div class="sass-project-content">
+                            <div class="sass-project-header">
+                                <div class="sass-project-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="sass-project-links">
+                                    <a href="#" class="sass-project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="sass-project-link" title="Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="sass-project-title">DevFlow</h3>
+                            <p class="sass-project-description">A modern Q&amp;A platform for developers built with Next.js, TypeScript, and MongoDB. Features include authentication, voting, tagging, and a rich text editor.</p>
+                            <div class="sass-project-tags">
+                                <span class="sass-project-tag">Next.js</span>
+                                <span class="sass-project-tag">TypeScript</span>
+                                <span class="sass-project-tag">MongoDB</span>
+                                <span class="sass-project-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="sass-project-card">
+                        <div class="sass-project-content">
+                            <div class="sass-project-header">
+                                <div class="sass-project-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="sass-project-links">
+                                    <a href="#" class="sass-project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="sass-project-link" title="Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="sass-project-title">FinTrack</h3>
+                            <p class="sass-project-description">A personal finance tracking application built with React, Redux, and Firebase. Track expenses, set budgets, and visualize spending patterns with interactive charts.</p>
+                            <div class="sass-project-tags">
+                                <span class="sass-project-tag">React</span>
+                                <span class="sass-project-tag">Redux</span>
+                                <span class="sass-project-tag">Firebase</span>
+                                <span class="sass-project-tag">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="sass-project-card">
+                        <div class="sass-project-content">
+                            <div class="sass-project-header">
+                                <div class="sass-project-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="sass-project-links">
+                                    <a href="#" class="sass-project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="sass-project-link" title="Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="sass-project-title">CodeNotes</h3>
+                            <p class="sass-project-description">A markdown-based note-taking app for developers with syntax highlighting, code snippets, and cloud synchronization. Built with Vue.js and Supabase.</p>
+                            <div class="sass-project-tags">
+                                <span class="sass-project-tag">Vue.js</span>
+                                <span class="sass-project-tag">Supabase</span>
+                                <span class="sass-project-tag">Markdown</span>
+                                <span class="sass-project-tag">Vite</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="sass-project-card">
+                        <div class="sass-project-content">
+                            <div class="sass-project-header">
+                                <div class="sass-project-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="sass-project-links">
+                                    <a href="#" class="sass-project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="sass-project-link" title="NPM">
+                                        <i class="fab fa-npm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="sass-project-title">Express API Toolkit</h3>
+                            <p class="sass-project-description">A collection of middleware, utilities, and best practices for building Express.js APIs. Includes authentication, validation, error handling, and more.</p>
+                            <div class="sass-project-tags">
+                                <span class="sass-project-tag">Node.js</span>
+                                <span class="sass-project-tag">Express</span>
+                                <span class="sass-project-tag">TypeScript</span>
+                                <span class="sass-project-tag">JWT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sassCodeSnippet" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-code sass-section-title-icon"></i>
+                        Featured Code Snippet
+                    </h2>
+                </div>
+                
+                <div class="sass-code-block">
+<span class="sass-code-comment">// A custom React hook for managing local storage</span>
+<span class="sass-code-keyword">import</span> { useState, useEffect } <span class="sass-code-keyword">from</span> <span class="sass-code-string">'react'</span>;
+
+<span class="sass-code-keyword">function</span> <span class="sass-code-function">useLocalStorage</span>(<span class="sass-code-variable">key</span>, <span class="sass-code-variable">initialValue</span>) {
+  <span class="sass-code-comment">// Get stored value from localStorage or use initialValue</span>
+  <span class="sass-code-keyword">const</span> [<span class="sass-code-variable">storedValue</span>, <span class="sass-code-variable">setStoredValue</span>] = useState(() =&gt; {
+    <span class="sass-code-keyword">try</span> {
+      <span class="sass-code-keyword">const</span> <span class="sass-code-variable">item</span> = window.localStorage.getItem(<span class="sass-code-variable">key</span>);
+      <span class="sass-code-keyword">return</span> <span class="sass-code-variable">item</span> ? JSON.parse(<span class="sass-code-variable">item</span>) : <span class="sass-code-variable">initialValue</span>;
+    } <span class="sass-code-keyword">catch</span> (<span class="sass-code-variable">error</span>) {
+      console.log(<span class="sass-code-variable">error</span>);
+      <span class="sass-code-keyword">return</span> <span class="sass-code-variable">initialValue</span>;
+    }
+  });
+
+  <span class="sass-code-comment">// Update localStorage when storedValue changes</span>
+  <span class="sass-code-keyword">const</span> <span class="sass-code-function">setValue</span> = (<span class="sass-code-variable">value</span>) =&gt; {
+    <span class="sass-code-keyword">try</span> {
+      <span class="sass-code-keyword">const</span> <span class="sass-code-variable">valueToStore</span> = <span class="sass-code-variable">value</span> <span class="sass-code-keyword">instanceof</span> Function ? <span class="sass-code-variable">value</span>(<span class="sass-code-variable">storedValue</span>) : <span class="sass-code-variable">value</span>;
+      setStoredValue(<span class="sass-code-variable">valueToStore</span>);
+      window.localStorage.setItem(<span class="sass-code-variable">key</span>, JSON.stringify(<span class="sass-code-variable">valueToStore</span>));
+    } <span class="sass-code-keyword">catch</span> (<span class="sass-code-variable">error</span>) {
+      console.log(<span class="sass-code-variable">error</span>);
+    }
+  };
+
+  <span class="sass-code-comment">// Listen for changes to this localStorage key in other tabs/windows</span>
+  useEffect(() =&gt; {
+    <span class="sass-code-keyword">const</span> <span class="sass-code-function">handleStorageChange</span> = (<span class="sass-code-variable">e</span>) =&gt; {
+      <span class="sass-code-keyword">if</span> (<span class="sass-code-variable">e</span>.key === <span class="sass-code-variable">key</span>) {
+        setStoredValue(JSON.parse(<span class="sass-code-variable">e</span>.newValue));
+      }
+    };
+    
+    window.addEventListener(<span class="sass-code-string">'storage'</span>, <span class="sass-code-variable">handleStorageChange</span>);
+    <span class="sass-code-keyword">return</span> () =&gt; window.removeEventListener(<span class="sass-code-string">'storage'</span>, <span class="sass-code-variable">handleStorageChange</span>);
+  }, [<span class="sass-code-variable">key</span>]);
+
+  <span class="sass-code-keyword">return</span> [<span class="sass-code-variable">storedValue</span>, <span class="sass-code-variable">setValue</span>];
+}
+
+<span class="sass-code-keyword">export</span> <span class="sass-code-keyword">default</span> useLocalStorage;
+</div>
+            </section>
+            
+            <section id="sassNewsletter" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-envelope sass-section-title-icon"></i>
+                        Newsletter
+                    </h2>
+                </div>
+                
+                <div class="sass-newsletter">
+                    <h3 class="sass-newsletter-title">Subscribe to my newsletter</h3>
+                    <p class="sass-newsletter-description">Get the latest articles, tutorials, and projects delivered straight to your inbox. No spam, unsubscribe anytime.</p>
+                    <form class="sass-newsletter-form">
+                        <input type="email" class="sass-newsletter-input" placeholder="Your email address" required="">
+                        <button type="submit" class="sass-newsletter-button">Subscribe</button>
+                    </form>
+                    <a href="#" class="sass-rss">
+                        <i class="fas fa-rss sass-rss-icon"></i>
+                        <span>Subscribe via RSS</span>
+                    </a>
+                </div>
+            </section>
+            
+            <section id="sassAbout" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-user sass-section-title-icon"></i>
+                        About Me
+                    </h2>
+                </div>
+                
+                <div class="sass-card">
+                    <div class="sass-card-content">
+                        <p class="sass-card-description" style="margin-bottom: 1.5rem;">
+                            Hi, I'm Abu Sufian, a full-stack developer with over 5 years of experience building web applications. I specialize in JavaScript, React, Node.js, and TypeScript. I'm passionate about creating clean, maintainable code and sharing my knowledge with the developer community.
+                        </p>
+                        <p class="sass-card-description" style="margin-bottom: 1.5rem;">
+                            Currently, I work as a Senior Frontend Developer at TechCorp, where I lead the development of our customer-facing web applications. In my free time, I contribute to open source projects, write technical articles, and build side projects to explore new technologies.
+                        </p>
+                        <p class="sass-card-description">
+                            When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new coffee brewing methods. I'm always open to connecting with fellow developers and discussing interesting projects or opportunities.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sassContact" class="sass-section">
+                <div class="sass-section-header">
+                    <h2 class="sass-section-title">
+                        <i class="fas fa-paper-plane sass-section-title-icon"></i>
+                        Get in Touch
+                    </h2>
+                </div>
+                
+                <div class="sass-card" style="">
+                    <div class="sass-card-content">
+                        <p class="sass-card-description" style="margin-bottom: 1.5rem;">
+                            Have a question, project idea, or just want to say hello? Feel free to reach out to me through any of the channels below. I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about tech.
+                        </p>
+                        
+                        <div class="sass-contact-info">
+                            <a href="mailto:abusufianshoron2017@gmail.com" class="sass-contact-item">
+                                <i class="fas fa-envelope sass-contact-icon"></i>
+                                <span>abusufianshoron2017@gmail.com</span>
+                            </a>
+                            <a href="tel:01705900937" class="sass-contact-item">
+                                <i class="fas fa-phone sass-contact-icon"></i>
+                                <span>01705900937</span>
+                            </a>
+                            <a href="https://x.com/abu_shoron" target="_blank" class="sass-contact-item">
+                                <i class="fab fa-twitter sass-contact-icon"></i>
+                                <span>@abusufianshoron</span>
+                            </a>
+                        </div>
+                        
+                        <form id="sassContactForm" style="margin-top: 2rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <input type="text" class="sass-newsletter-input" placeholder="Your name" required="">
+                                <input type="email" class="sass-newsletter-input" placeholder="Your email" required="">
+                            </div>
+                            <input type="text" class="sass-newsletter-input" placeholder="Subject" required="" style="margin-bottom: 1rem;">
+                            <textarea class="sass-newsletter-input" placeholder="Your message" required="" style="min-height: 150px; margin-bottom: 1rem; resize: vertical;"></textarea>
+                            <button type="submit" class="sass-newsletter-button">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="sass-footer">
+        <div class="sass-container">
+            <div class="sass-footer-links">
+                <a href="#" class="sass-footer-link">Home</a>
+                <a href="#sassBlog" class="sass-footer-link">Blog</a>
+                <a href="#sassProjects" class="sass-footer-link">Projects</a>
+                <a href="#sassAbout" class="sass-footer-link">About</a>
+                <a href="#sassContact" class="sass-footer-link">Contact</a>
+                <a href="#" class="sass-footer-link">RSS</a>
+                <a href="#" class="sass-footer-link">Privacy Policy</a>
+            </div>
+            
+            <div class="sass-social-links" style="justify-content: center; margin-bottom: 1.5rem;">
+                <a href="https://x.com/abu_shoron" target="_blank" class="sass-social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/abusufian2017" target="_blank" class="sass-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sheikh-abu-sufian-shoron/" target="_blank" class="sass-social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" target="_blank" class="sass-social-link">
+                    <i class="fab fa-dev"></i>
+                </a>
+                <a href="#" target="_blank" class="sass-social-link">
+                    <i class="fas fa-h-square"></i>
+                </a>
+            </div>
+            
+            <p class="sass-copyright">© 2025 Abu Sufian. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const sassMobileMenuButton = document.getElementById('sassMobileMenuButton');
+            const sassNav = document.getElementById('sassNav');
+            
+            sassMobileMenuButton.addEventListener('click', function() {
+                sassNav.classList.toggle('sass-active');
+                
+                const isExpanded = sassNav.classList.contains('sass-active');
+                sassMobileMenuButton.setAttribute('aria-expanded', isExpanded);
+                
+                if (isExpanded) {
+                    sassMobileMenuButton.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    sassMobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        sassNav.classList.remove('sass-active');
+                        sassMobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+            
+            // Newsletter form submission
+            const sassNewsletterForm = document.querySelector('.sass-newsletter-form');
+            
+            sassNewsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // In a real application, you would send this data to a server
+                // For this demo, we'll just show an alert
+                alert(`Thanks for subscribing with ${email}! You'll receive the next newsletter issue.`);
+                
+                // Reset the form
+                this.reset();
+            });
+            
+            // Contact form submission
+            const sassContactForm = document.getElementById('sassContactForm');
+            
+            sassContactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const name = formData.get('name') || 'there'; // Fallback if name field doesn't have a name attribute
+                
+                // In a real application, you would send this data to a server
+                // For this demo, we'll just show an alert
+                alert(`Thanks for your message, ${name}! I'll get back to you soon.`);
+                
+                // Reset the form
+                this.reset();
+            });
+            
+            // Search functionality
+            const sassSearchInput = document.querySelector('.sass-search-input');
+            
+            sassSearchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    
+                    const searchTerm = this.value.trim();
+                    
+                    if (searchTerm) {
+                        // In a real application, you would perform a search
+                        // For this demo, we'll just show an alert
+                        alert(`Searching for: "${searchTerm}"`);
+                    }
+                }
+            });
+            
+            // Add hover effects to cards
+            const sassCards = document.querySelectorAll('.sass-card, .sass-project-card');
+            
+            sassCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
